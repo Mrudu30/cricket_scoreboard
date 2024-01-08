@@ -1,6 +1,7 @@
 // Function to sort an array using insertion sort
-function insertionSort(arr, n) 
+function insertionSort(arr) 
 { 
+    let n = arr.length
 	let i, key, j; 
 	for (i = 1; i < n; i++) 
 	{ 
@@ -17,11 +18,12 @@ function insertionSort(arr, n)
 		} 
 		arr[j + 1] = key; 
 	} 
-    console.log(arr)
+    // console.log(arr)
 } 
 
 // Driver code 
-let arr = [12, 11, 13, 5, 6 ]; 
-let n = arr.length; 
+// let arr = [12, 11, 13, 5, 6 ]; 
+// let n = arr.length; 
 
-insertionSort(arr, n); 
+// insertionSort(arr, n); 
+export default insertionSort

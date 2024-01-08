@@ -10,7 +10,6 @@ function bubbleSort(arr) {
 
 			// Checking if the item at present iteration is greater than the next iteration
 			if (arr[j] > arr[j + 1]) {
-
 				// If the condition is true then swap them
 				var temp = arr[j]
 				arr[j] = arr[j + 1]
@@ -22,8 +21,10 @@ function bubbleSort(arr) {
 	console.log(arr);
 }
 
-// This is our unsorted array
-var arr = [234, 43, 55, 63, 5, 6, 235, 547];
+// Driver code
+// var arr = [234, 43, 55, 63, 5, 6, 235, 547];
 
 // Calling the bubbleSort function
-bubbleSort(arr);
+// bubbleSort(arr);
+
+export default bubbleSort
