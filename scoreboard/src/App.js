@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 const App = () => {
+  // hook useage
   const [batsmanName, setBatsmanName] = useState('');
   const [runs, setRuns] = useState(0);
   const [batsmenList, setBatsmenList] = useState([]);
@@ -11,6 +12,7 @@ const App = () => {
   const [bowlersList, setBowlersList] = useState([]);
   const [sortBowlers, setSortBowlers] = useState(false);
 
+  // Selection Sort
   const selectionSort = (dataList, key) => {
     const n = dataList.length;
 
@@ -34,6 +36,20 @@ const App = () => {
     return dataList;
   };
 
+  // Sorting Functions
+  const sortBatsmenData = () => {
+    const sortedBatsmen = selectionSort([...batsmenList], 'runs');
+    setBatsmenList(sortedBatsmen);
+    setSortBatsmen(true);
+  };
+
+  const sortBowlersData = () => {
+    const sortedBowlers = selectionSort([...bowlersList], 'wickets');
+    setBowlersList(sortedBowlers);
+    setSortBowlers(true);
+  };
+
+  // Adding Scores of Batsmen and Bowlers
   const addBatsman = () => {
     if (batsmanName.trim() !== '') {
       const newBatsman = { name: batsmanName, runs: runs };
@@ -50,18 +66,6 @@ const App = () => {
       setBowlerName('');
       setWickets(0);
     }
-  };
-
-  const sortBatsmenData = () => {
-    const sortedBatsmen = selectionSort([...batsmenList], 'runs');
-    setBatsmenList(sortedBatsmen);
-    setSortBatsmen(true);
-  };
-
-  const sortBowlersData = () => {
-    const sortedBowlers = selectionSort([...bowlersList], 'wickets');
-    setBowlersList(sortedBowlers);
-    setSortBowlers(true);
   };
 
   return (
