@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import insertionSort from './insertionSort';
+import selectionSort from './selectionSort';
 
 const App = () => {
   // hook useage
@@ -12,30 +14,6 @@ const App = () => {
   const [bowlersList, setBowlersList] = useState([]);
   const [sortBowlers, setSortBowlers] = useState(false);
 
-  // Selection Sort
-  const selectionSort = (dataList, key) => {
-    const n = dataList.length;
-
-    for (let i = 0; i < n - 1; i++) {
-      let minIndex = i;
-
-      for (let j = i + 1; j < n; j++) {
-        if (dataList[j][key] < dataList[minIndex][key]) {
-          minIndex = j;
-        }
-      }
-
-      if (minIndex !== i) {
-        // Swap elements
-        const temp = dataList[i];
-        dataList[i] = dataList[minIndex];
-        dataList[minIndex] = temp;
-      }
-    }
-
-    return dataList;
-  };
-
   // Sorting Functions
   const sortBatsmenData = () => {
     const sortedBatsmen = selectionSort([...batsmenList], 'runs');
@@ -44,7 +22,7 @@ const App = () => {
   };
 
   const sortBowlersData = () => {
-    const sortedBowlers = selectionSort([...bowlersList], 'wickets');
+    const sortedBowlers = insertionSort([...bowlersList], 'wickets');
     setBowlersList(sortedBowlers);
     setSortBowlers(true);
   };
@@ -56,6 +34,7 @@ const App = () => {
       setBatsmenList((prevList) => [...prevList, newBatsman]);
       setBatsmanName('');
       setRuns(0);
+      console.log(batsmenList)
     }
   };
 
@@ -65,6 +44,7 @@ const App = () => {
       setBowlersList((prevList) => [...prevList, newBowler]);
       setBowlerName('');
       setWickets(0);
+      console.log(bowlersList)
     }
   };
 

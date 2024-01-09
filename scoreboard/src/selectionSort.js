@@ -22,8 +22,14 @@
     return arr;
 };
 
-// Driver Code
-// x = [90,23,12,67]
-// selectionSort(x)
+// Example usage
+//   const data = [
+// 	{ name: 'b1', wickets: 21 },
+// 	{ name: 'a2', wickets: 15 },
+// 	{ name: 'c3', wickets: 30 },
+//   ];
+  
+//   const sortedData = selectionSort(data, 'wickets');
+//   console.log(sortedData);
 
 export default selectionSort
