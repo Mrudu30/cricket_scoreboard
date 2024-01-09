@@ -1,4 +1,4 @@
- // Selection Sort
+ // Selection Sort Ascending
  const selectionSort = (arr, key) => {
     const n = arr.length;
 

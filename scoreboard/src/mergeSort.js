@@ -1,4 +1,4 @@
-// descending order
+// descending order Merge Sort
 const mergeSort = (arr, key) => {
     if (arr.length <= 1) {
       return arr;

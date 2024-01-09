@@ -1,3 +1,4 @@
+// Ascending order
 const insertionSort = (arr, key) => {
     const n = arr.length;
   

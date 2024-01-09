@@ -1,4 +1,4 @@
-// descending order
+// descending order Bubble sort
 const bubbleSort = (arr, key) => {
 	const n = arr.length;
   
